@@ -1,22 +1,24 @@
 
-### Projeto Cipher
+## Cipher
+##### Projeto elaborado para Laboratória SP 01/19
+***
 
-Projeto elaborado para Laboratória SP 01/19
-Trata-se de uma aplicação web que inclui: desenhar um produto pensando nos usuários, construir uma interface, escutar eventos básicos do DOM, escrever a lógica que cifra e decifra mensagens, realizar testes básicos que comprovem (e documentem) esta lógica, e finalmente manipular o DOM para que ele mostre e imprima os resultados.
+Desenvolvi uma aplicação web para cifrar e decifrar mensagens a partir da "Cifra de César".
+O desenvolvimento incluiu: desenhar um produto pensando nos usuários, construir uma interface, escutar eventos básicos do DOM, escrever a lógica com Javascript somente, realizar testes básicos que comprovem (e documentem) esta lógica, e finalmente manipular o DOM para que ele mostre e imprima os resultados.
 
 ![alt text](https://github.com/tmcamillo/caesar-cipher/blob/master/Cipher.png "Flowchart Cipher")
 
-### Checklist
+##### Checklist dos Requerimentos
 
-* [ ] Usar VanillaJS.
-* [ ] Permitir escrever um texto, com letras maiúsculas e minúsculas, para ser
+* [X] Usar VanillaJS.
+* [X] Permitir escrever um texto, com letras maiúsculas e minúsculas, para ser
   cifrado.
-* [ ] Mostrar o resultado da cifra corretamente.
-* [ ] Permitir escrever um texto, com letras maiúsculas e minúsculas, para ser
+* [X] Mostrar o resultado da cifra corretamente.
+* [X] Permitir escrever um texto, com letras maiúsculas e minúsculas, para ser
   descifrado.
-* [ ] Mostrar o resultado descifrado corretamente.
-* [ ] Permitir escolher o `offset` (_deslocamento_) a ser usado na
+* [X] Mostrar o resultado descifrado corretamente.
+* [X] Permitir escolher o `offset` (_deslocamento_) a ser usado na
   cifragem/descifragem.
-* [ ] Implementa `cipher.encode`.
-* [ ] Implementa `cipher.decode`.
-* [ ] Criar testes unitários.
+* [X] Implementa `cipher.encode`.
+* [X] Implementa `cipher.decode`.
+* [X] Criar testes unitários.
