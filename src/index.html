@@ -6,8 +6,35 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script src="cipher.js"></script>
-    <script src="index.js"></script>
+		<div id="root"></div>
+		<script src="cipher.js"></script>
+		<!--<script src="index.js"></script>-->
+
+		<header>
+			<h1>CIPHER</h1>
+			<h2>Cesão para os íntimos</h2>
+		</header>
+    
+    	<main>
+			<p>Olá! Insira abaixo a palavra que deseja codificar ou decifrar e selecione o botão correspondente.</p>
+			<textarea type="text" id="word" rows="2" cols="50"></textarea></br>
+			
+			 <select id="offset" >
+				<option value='1'>01</option>
+				<option value="2">02</option>
+				<option value="3">03</option>
+				<option value="4">04</option>
+				<option value="5">05</option>
+				<option value="6">06</option>
+				<option value="7">07</option>
+			</select> </br>
+
+			<button class="button" onclick="inputWord('encode')">Codificar</button>
+			<button class="button" onclick="inputWord('decode')">Decifrar</button>
+
+			<p id="resultEncode" class="hidden"> </p>
+		 	<p id="resultDecode" class="hidden"> </p>
+    	</main>
+    
   </body>
 </html>
