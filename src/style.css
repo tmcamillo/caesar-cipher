@@ -4,33 +4,64 @@ body{
     background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10h10v10H0V10zM10 0h10v10H10V0z' fill='%234afdf5' fill-opacity='0.36' fill-rule='evenodd'/%3E%3C/svg%3E");
     text-align: center;
     font-size: 0.9rem;
-    color: #707070;
+    color: #47498a;
+    line-height: 1.4;
 }
+h1 {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.subtitle {
+    margin-top: 0;
+}
+
 header {
     font-family: 'VT323', monospace;
     font-size: 2rem;
     color: #47498a;
 }
 #box {
-    width:32%;
-    height:32%;
+    width:33%;
+    height: 33%;
     background:rgb(255, 255, 255);
     margin:0 auto;
     margin-top: 5%;
-    padding: 1.2rem; 
+    margin-bottom: 5%;
+    padding: 3rem; 
     border-radius: 5px;
 }
 
+.text-area-style {
+    font-size: 1rem;
+    color: #47498a;
+    background-color: rgb(247, 247, 247);
+    border-radius: 3px;
+    width: 20vw;
+
+}
+
 .button {
-    font-size: 0.9rem;
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
     background-color: #37ebe2;
     width:40%;
     height: 40px;
-    border-radius: 5px;
-    color: #3f3f3f;
+    border-radius: 3px;
+    color: #47498a;
+    border: 0;
   }
 
+#resultEncode {
+    font-size: 1rem;
+    color: #fc009b;
+  }
+
+#resultDecode {
+    font-size: 1rem;
+    color: #ff5e00;
+  }
   
-#hidden {
-    display: none
+.hidden {
+    display: none;
 }

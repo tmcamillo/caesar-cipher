@@ -20,14 +20,14 @@ function inputWord(type_button) {
 
 	// executa o botao conforme o tipo clicado
 	if (type_button == 'encode') {
-		document.getElementById("resultEncode").innerHTML = "Mensagem codificada: " + encode(offsetInput, originalWord);
+		document.getElementById("resultEncode").innerHTML = "Mensagem Codificada: " + encode(offsetInput, originalWord);
 		document.getElementById("resultEncode").style.display = "block";
-    	document.getElementById("resultDecode").style.display = "none";
+		document.getElementById("resultDecode").style.display = "none";
 	}
 	else if (type_button == 'decode') {
-		document.getElementById("resultDecode").innerHTML = "Mensagem decifrada: " + decode(offsetInput, originalWord);
+		document.getElementById("resultDecode").innerHTML = "Mensagem Decifrada: " + decode(offsetInput, originalWord);
+		document.getElementById("resultDecode").style.display = "block";
 		document.getElementById("resultEncode").style.display = "none";
-    	document.getElementById("resultDecode").style.display = "block";
 	}
 }
 
@@ -66,40 +66,21 @@ function decode (offsetInput, originalWord) {
 		let ascCode = originalWord.charCodeAt([i])
 
 		if ( ascCode >= 65 && ascCode <= 90 ) { 
-			for ( let j = 0; j < offsetInput; j++){
-				if (ascCode > 65) ascCode-- 
-				else { ascCode = 90 }
-			} 
-			let calculationUpperCase = ascCode;
-
-			/*let calculationUpperCase = (( ascCode - 65 - offsetInput) % 26 ) + 65;
-			console.log(ascCode - 65 - offsetInput);
-			console.log(((ascCode - 65 - offsetInput)*-1)%26);
-			console.log((( ascCode - 65 - offsetInput) % 26 ) + 65);
-			
-			if (calculationUpperCase < 65) calculationUpperCase = 90*/
-
+			let calculationUpperCase = (( ascCode - 65 - (offsetInput%26)) + 26) % 26 + 90 
 			let modifyLetterUpper =  String.fromCharCode(calculationUpperCase);	
 			decodeWord.push(modifyLetterUpper);
-		} 
+	
+		} 	
 		else if ( ascCode >= 97 && ascCode <= 122 ) {
-			for ( let j = 0; j < offsetInput; j++){
-				if (ascCode > 65) ascCode-- 
-				else { ascCode = 90 }
-			} 
-			let calculationLowerCase = ascCode;
-
-			/*let calculationLowerCase = (( ascCode - 97 - offsetInput) % 26 ) + 97;
-			if (calculationLowerCase < 97) calculationLowerCase = 122*/
-			
+			let calculationLowerCase = (( ascCode - 97 - (offsetInput%26)) + 26) % 26 + 97 
 			let modifyLetterLower = String.fromCharCode(calculationLowerCase);
 			decodeWord.push(modifyLetterLower);
-		} 
+	
+		}
 		else {
 			let allOthers = String.fromCharCode(ascCode);
-		//	console.log(allOthers);
 			decodeWord.push(allOthers);
 		}
 	} 
 	return decodeWord.join('')
-} 
+}
