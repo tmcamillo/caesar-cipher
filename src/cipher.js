@@ -10,7 +10,6 @@ function inputWord(type_button) {
 	originalWord = originalWord.value;
 	
 	let offsetInput = document.getElementById("offset").value;
-	//value na parte debaixo para garantir que só será pego um valor de um input que exista
 	offsetInput = parseInt(offsetInput);
 
 	// if para o caso de botao ser clicado mas campo nao for preenchido
@@ -20,12 +19,12 @@ function inputWord(type_button) {
 
 	// executa o botao conforme o tipo clicado
 	if (type_button == 'encode') {
-		document.getElementById("resultEncode").innerHTML = "Mensagem Codificada: " + encode(offsetInput, originalWord);
+		document.getElementById("resultEncode").innerHTML = "Mensagem Codificada: <br>" + encode(offsetInput, originalWord);
 		document.getElementById("resultEncode").style.display = "block";
 		document.getElementById("resultDecode").style.display = "none";
 	}
 	else if (type_button == 'decode') {
-		document.getElementById("resultDecode").innerHTML = "Mensagem Decifrada: " + decode(offsetInput, originalWord);
+		document.getElementById("resultDecode").innerHTML = "Mensagem Decifrada: <br>" + decode(offsetInput, originalWord);
 		document.getElementById("resultDecode").style.display = "block";
 		document.getElementById("resultEncode").style.display = "none";
 	}
@@ -66,7 +65,7 @@ function decode (offsetInput, originalWord) {
 		let ascCode = originalWord.charCodeAt([i])
 
 		if ( ascCode >= 65 && ascCode <= 90 ) { 
-			let calculationUpperCase = (( ascCode - 65 - (offsetInput%26)) + 26) % 26 + 90 
+			let calculationUpperCase = (( ascCode - 65 - (offsetInput%26)) + 26) % 26 + 65
 			let modifyLetterUpper =  String.fromCharCode(calculationUpperCase);	
 			decodeWord.push(modifyLetterUpper);
 	
