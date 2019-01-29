@@ -13,35 +13,22 @@
 
 		<div id="box"> 
 			<header>
-				<h1>CIPHER</h1></b>
+				<h1>CIPHER</h1>
 				<p class='subtitle'>Jlzãv whyh vz íuaptvz</p>
 			</header>
 		
 			<main>
-				<p>Insira abaixo a palavra que deseja codificar ou decifrar, e então selecione o botão correspondente.</p>
-				<textarea class="text-area-style" type="text" id="word"></textarea>
+				<p>Insira abaixo a mensagem que deseja codificar ou revelar! E não se esqueça de sempre perguntar o deslocamento pro amiguinho :)</p>
 				</br>
-				</br>
-				Escolha o deslocamento: <select class="select" id="offset" >
-					<option value='1'>01</option>
-					<option value="2">02</option>
-					<option value="3">03</option>
-					<option value="4">04</option>
-					<option value="5">05</option>
-					<option value="6">06</option>
-					<option value="7">07</option>
-					<option value="8">08</option>
-					<option value="9">09</option>
-					<option value="10">10</option>
-				</select> 
-				</br>
+				<textarea class="text-area-style" type="text" placeholder="Insira aqui o seu texto" id="word"></textarea>
+				<textarea class="text-area-style" type="text" placeholder="E aqui o deslocamento" id="offset"></textarea>
 				</br>
 				</br>
 				<button class="button" onclick="inputWord('encode')">CIFRAR</button>
 				<button class="button" onclick="inputWord('decode')">DECIFRAR</button>
 				
-				<p id="resultEncode" class="hidden"> </p>
-				<p id="resultDecode" class="hidden"> </p>
+				<p id="resultEncode" class="hidden"></p>
+				<p id="resultDecode" class="hidden"></p>
 			</main>
 		</div>
   </body>

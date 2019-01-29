@@ -9,9 +9,9 @@ function inputWord(type_button) {
 	//value na parte debaixo para garantir que só será pego um valor de um input que exista
 	originalWord = originalWord.value;
 	
-	let offsetInput = document.getElementById("offset");
+	let offsetInput = document.getElementById("offset").value;
 	//value na parte debaixo para garantir que só será pego um valor de um input que exista
-	offsetInput = parseInt(offsetInput.options[offset.selectedIndex].value);
+	offsetInput = parseInt(offsetInput);
 
 	// if para o caso de botao ser clicado mas campo nao for preenchido
 	if (!originalWord) {
