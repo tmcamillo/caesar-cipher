@@ -64,19 +64,19 @@ function decode (originalWord, offsetInput) {
 	for (let i = 0; i < originalWord.length; i++) {
 		let ascCode = originalWord.charCodeAt([i])
 
-		// loop while para condição executar ação até que a condição torne-se falsa
+		// loop while para condição, se verdadeira, executar ação até que a condição torne-se falsa
 		while (offsetInput < 0){
 			offsetInput += 26
 		}
 
 		if ( ascCode >= 65 && ascCode <= 90 ) { 
-			let calculationUpperCase = (( ascCode - 65 - (offsetInput%26)) + 26) % 26 + 65
+			let calculationUpperCase = (((ascCode - 90) - offsetInput) % 26) + 90
 			let modifyLetterUpper =  String.fromCharCode(calculationUpperCase);	
 			decodeWord.push(modifyLetterUpper);
 	
 		} 	
 		else if ( ascCode >= 97 && ascCode <= 122 ) {
-			let calculationLowerCase = (( ascCode - 97 - (offsetInput%26)) + 26) % 26 + 97 
+			let calculationLowerCase = (((ascCode - 122) - offsetInput) % 26) + 122 
 			let modifyLetterLower = String.fromCharCode(calculationLowerCase);
 			decodeWord.push(modifyLetterLower);
 	
