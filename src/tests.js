@@ -1,36 +1,36 @@
 
-if (encode(1, 'ZatC') === 'AbuD') {
+if (encode('ZatC', 1) === 'AbuD') {
     console.log('Selo Cesão de Aprovação rapá!');
 } else {
     console.log('deu erro' + 'AbuD');
 }
 
-if (encode(1, 'Cesão') === 'Dftãp') {
+if (encode('Cesão', 1) === 'Dftãp') {
     console.log('Selo Cesão de Aprovação rapá!');
 } else {
     console.log('deu erro' + 'Dftãp');
 }
 
-if (encode(1, 'A R S W xyz') === 'B S T X yza') {
+if (encode('A R S W xyz', 1) === 'B S T X yza') {
     console.log('Selo Cesão de Aprovação rapá!');
 } else {
     console.log('deu erro' + 'B S T X yza');
 }
 
 
-if (decode(1, 'AbuD') === 'ZatC') {
+if (decode('AbuD', 1) === 'ZatC') {
     console.log('Selo Cesão de Aprovação rapá!');
 } else {
     console.log('deu erro' + 'ZatC');
 }
 
-if (decode(1, 'Dftãp') === 'Cesão') {
+if (decode('Dftãp', 1) === 'Cesão') {
     console.log('Selo Cesão de Aprovação rapá!');
 } else {
     console.log('deu erro' + 'Cesão');
 }
 
-if (decode(1, 'B S T X yza') === 'A R S W xyz') {
+if (decode('B S T X yza', 1) === 'A R S W xyz') {
     console.log('Selo Cesão de Aprovação rapá!');
 } else {
     console.log('deu erro' + 'A R S W xyz');

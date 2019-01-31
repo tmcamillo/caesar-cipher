@@ -14,18 +14,18 @@ function inputWord(type_button) {
 
 	// executa o botao conforme o tipo clicado
 	if (type_button == 'encode') {
-		document.getElementById("resultEncode").innerHTML = "Mensagem Cifrada: <br>" + encode(offsetInput, originalWord);
+		document.getElementById("resultEncode").innerHTML = "Mensagem Cifrada: <br>" + encode(originalWord, offsetInput);
 		document.getElementById("resultEncode").style.display = "block";
 		document.getElementById("resultDecode").style.display = "none";
 	}
 	else if (type_button == 'decode') {
-		document.getElementById("resultDecode").innerHTML = "Mensagem Decifrada: <br>" + decode(offsetInput, originalWord);
+		document.getElementById("resultDecode").innerHTML = "Mensagem Decifrada: <br>" + decode(originalWord, offsetInput);
 		document.getElementById("resultDecode").style.display = "block";
 		document.getElementById("resultEncode").style.display = "none";
 	}
 }
 
-function encode(offsetInput, originalWord) {
+function encode (originalWord, offsetInput) {
 	// loop percorre string e retorna a posição de cada uma das letras, pega resultado e aplica a fórmula do 
 	//Daniel, de maneira que retorne o número a partir do deslocamento.
 	let encodeWord = [];
@@ -56,7 +56,7 @@ function encode(offsetInput, originalWord) {
 	return encodeWord.join('')
 }
 
-function decode (offsetInput, originalWord) {
+function decode (originalWord, offsetInput) {
 	// loop percorre string e retorna a posição de cada uma das letras, pega resultado e aplica a fórmula do 
 	//Daniel, de maneira que retorne o número a partir do deslocamento.
 	let decodeWord = [];
