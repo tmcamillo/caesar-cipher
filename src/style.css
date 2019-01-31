@@ -12,13 +12,13 @@ h1 {
     margin-bottom: 0;
     margin-top: 0;
     text-shadow: 3px 4px 2px #24e2d9;
-    font-size: 5rem;
+    font-size: 6vw;
 }
 
-.subtitle {
+.subheading {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 3rem;
+    font-size: 3vw;
 }
 
 header {
@@ -74,7 +74,7 @@ header {
 
 #resultEncode {
     font-size: 1rem;
-    color: rgb(245, 0, 163);
+    color: rgb(245, 0, 163); 
   }
 
 #resultDecode {

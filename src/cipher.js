@@ -1,8 +1,3 @@
-/*
-window.cipher = {
-  // ... 
-}; */
-
 function inputWord(type_button) {
 	//variável para gravar os inputs do html
 	let originalWord = document.getElementById("word");
@@ -19,7 +14,7 @@ function inputWord(type_button) {
 
 	// executa o botao conforme o tipo clicado
 	if (type_button == 'encode') {
-		document.getElementById("resultEncode").innerHTML = "Mensagem Codificada: <br>" + encode(offsetInput, originalWord);
+		document.getElementById("resultEncode").innerHTML = "Mensagem Cifrada: <br>" + encode(offsetInput, originalWord);
 		document.getElementById("resultEncode").style.display = "block";
 		document.getElementById("resultDecode").style.display = "none";
 	}
@@ -37,6 +32,11 @@ function encode(offsetInput, originalWord) {
 	
 	for (let i = 0; i < originalWord.length; i++) {
 		let ascCode = originalWord.charCodeAt([i])
+
+		// loop while para condição executar ação até que a condição torne-se falsa
+		while (offsetInput < 0){
+			offsetInput += 26
+		}
 
 		if ( ascCode >= 65 && ascCode <= 90 ) {
 			let calculationUpperCase = (( ascCode - 65 + offsetInput) % 26 ) + 65;
@@ -63,6 +63,11 @@ function decode (offsetInput, originalWord) {
 	
 	for (let i = 0; i < originalWord.length; i++) {
 		let ascCode = originalWord.charCodeAt([i])
+
+		// loop while para condição executar ação até que a condição torne-se falsa
+		while (offsetInput < 0){
+			offsetInput += 26
+		}
 
 		if ( ascCode >= 65 && ascCode <= 90 ) { 
 			let calculationUpperCase = (( ascCode - 65 - (offsetInput%26)) + 26) % 26 + 65

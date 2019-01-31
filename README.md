@@ -24,3 +24,5 @@ A interface inclui uma caixa de texto única para inclusão das mensagens; um dr
 * [X] Implementa `cipher.encode`.
 * [X] Implementa `cipher.decode`.
 * [X] Criar testes unitários.
+* [X] Permite usar um offset (deslocamento) negativo.
+* [X] Cifra/descifra outros caracteres (espaços, pontuação, ã, á, ...)
