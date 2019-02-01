@@ -1,18 +1,14 @@
 let inputWord = (type_button) => {
-	//variável para gravar os inputs do html
 	let originalWord = document.getElementById("word");
-	//value na parte debaixo para garantir que só será pego um valor de um input que exista
 	originalWord = originalWord.value;
 	
 	let offsetInput = document.getElementById("offset").value;
 	offsetInput = parseInt(offsetInput);
 
-	// if para o caso de botao ser clicado mas campo nao for preenchido
 	if (!originalWord) {
 		alert ("OPS! Nenhuma palavra foi inserida, preencha o campo para continuar");
 	}
 
-	// executa o botao conforme o tipo clicado
 	if (type_button == 'encode') {
 		document.getElementById("resultEncode").innerHTML = "Mensagem Cifrada: <br>" + encode(originalWord, offsetInput);
 		document.getElementById("resultEncode").style.display = "block";
@@ -26,14 +22,11 @@ let inputWord = (type_button) => {
 }
 
 function encode (originalWord, offsetInput) {
-	//loop percorre string e retorna a posição de cada uma das letras, pega resultado e aplica a fórmula do 
-	//Daniel, de maneira que retorne o número a partir do deslocamento.
 	let encodeWord = [];
 	
 	for (let i in originalWord) {
 		let ascCode = originalWord.charCodeAt(i)
 
-		// loop while para condição executar ação até que a condição torne-se falsa
 		while (offsetInput < 0){
 			offsetInput += 26
 		}
@@ -57,14 +50,11 @@ function encode (originalWord, offsetInput) {
 }
 
 function decode (originalWord, offsetInput) {
-	// loop percorre string e retorna a posição de cada uma das letras, pega resultado e aplica a fórmula do 
-	//Daniel, de maneira que retorne o número a partir do deslocamento.
 	let decodeWord = [];
 	
 	for (let i in originalWord) {
 		let ascCode = originalWord.charCodeAt(i)
 
-		// loop while para condição, se verdadeira, executar ação até que a condição torne-se falsa
 		while (offsetInput < 0){
 			offsetInput += 26
 		}
