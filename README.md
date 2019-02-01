@@ -6,7 +6,9 @@
 Desenvolvi uma aplicação web para cifrar e decifrar mensagens a partir da "Cifra de César".
 
 
-A interface inclui uma caixa de texto única para inclusão das mensagens; um drop list dos valores de deslocamento para o usuário selecionar qual desejar e, dois botões para as duas ações possíveis dentro da aplicação. Para isso foi necessário: desenhar o produto levando em conta os usuários, desenvolver a interface, escutar eventos básicos do DOM, construir a lógica usando apenas Javascript, realizar testes básicos que comprovem (e documentem) esta lógica, e finalmente manipular o DOM para que ele mostre e imprima os resultados.
+A interface inclui duas caixa de textos, sendo uma para inclusão dos textos e outra para o vaor de deslocamento. Após o preenchimento, a ação se dá através dos dois únicos botões de ação possíveis dentro na aplicação: Cifrar e Decifrar. 
+
+Elaborei o projeto aplicando muito do que aprendi nos exercicíos de iteração de array e loop. Iniciei o processo escrevendo o passo-a-passo de tudo o que precisava logicamente - sem pensar em código, para então ir descobrindo/pesquisando como executá-las uma a uma. E para toda necessidade que foi surgindo durante o processo eu elaborava a dúvida e recorria a todos os meios possíveis para respondê-la. O CSS ajustei quando já estava mais próximo do fim assim como os testes. 
 
 ![alt text](https://github.com/tmcamillo/caesar-cipher/blob/master/Cipher.png "Flowchart Cipher")
 
@@ -25,4 +27,4 @@ A interface inclui uma caixa de texto única para inclusão das mensagens; um dr
 * [X] Implementa `cipher.decode`.
 * [X] Criar testes unitários.
 * [X] Permite usar um offset (deslocamento) negativo.
-* [X] Cifra/descifra outros caracteres (espaços, pontuação, ã, á, ...)
+* [X] Cifra/decifra outros caracteres (espaços, pontuação, ã, á, ...)
