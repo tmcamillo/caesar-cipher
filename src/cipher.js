@@ -6,15 +6,16 @@ function inputWord (type_button) {
 	offsetInput = parseInt(offsetInput);
 
 	if (!originalWord) {
-		alert ("OPS! Nenhuma palavra foi inserida, preencha ambos os campo para continuar");
+		alert ("OPS! Nenhuma palavra foi inserida, preencha ambos os campo para continuar")
+		return;
 	}
 
-	if (type_button == 'encode') {
+	if (type_button === 'encode') {
 		document.getElementById("resultEncode").innerHTML = "Mensagem Cifrada: <br>" + encode(originalWord, offsetInput);
 		document.getElementById("resultEncode").style.display = "block";
 		document.getElementById("resultDecode").style.display = "none";
 	}
-	else if (type_button == 'decode') {
+	else if (type_button === 'decode') {
 		document.getElementById("resultDecode").innerHTML = "Mensagem Decifrada: <br>" + decode(originalWord, offsetInput);
 		document.getElementById("resultDecode").style.display = "block";
 		document.getElementById("resultEncode").style.display = "none";
@@ -60,13 +61,13 @@ function decode (originalWord, offsetInput) {
 		}
 
 		if ( ascCode >= 65 && ascCode <= 90 ) { 
-			let calculationUpperCase = (((ascCode - 90) - offsetInput) % 26) + 90;
+			let calculationUpperCase = (( ascCode - 90 - offsetInput) % 26 ) + 90;
 			let modifyLetterUpper =  String.fromCharCode(calculationUpperCase);	
 			decodeWord.push(modifyLetterUpper);
 	
 		} 	
 		else if ( ascCode >= 97 && ascCode <= 122 ) {
-			let calculationLowerCase = (((ascCode - 122) - offsetInput) % 26) + 122;
+			let calculationLowerCase = (( ascCode - 122 - offsetInput) % 26 ) + 122;
 			let modifyLetterLower = String.fromCharCode(calculationLowerCase);
 			decodeWord.push(modifyLetterLower);
 	
