@@ -1,4 +1,4 @@
-let inputWord = (type_button) => {
+function inputWord (type_button) {
 	let originalWord = document.getElementById("word");
 	originalWord = originalWord.value;
 	
@@ -6,7 +6,7 @@ let inputWord = (type_button) => {
 	offsetInput = parseInt(offsetInput);
 
 	if (!originalWord) {
-		alert ("OPS! Nenhuma palavra foi inserida, preencha o campo para continuar");
+		alert ("OPS! Nenhuma palavra foi inserida, preencha ambos os campo para continuar");
 	}
 
 	if (type_button == 'encode') {
@@ -60,13 +60,13 @@ function decode (originalWord, offsetInput) {
 		}
 
 		if ( ascCode >= 65 && ascCode <= 90 ) { 
-			let calculationUpperCase = (((ascCode - 90) - offsetInput) % 26) + 90
+			let calculationUpperCase = (((ascCode - 90) - offsetInput) % 26) + 90;
 			let modifyLetterUpper =  String.fromCharCode(calculationUpperCase);	
 			decodeWord.push(modifyLetterUpper);
 	
 		} 	
 		else if ( ascCode >= 97 && ascCode <= 122 ) {
-			let calculationLowerCase = (((ascCode - 122) - offsetInput) % 26) + 122 
+			let calculationLowerCase = (((ascCode - 122) - offsetInput) % 26) + 122;
 			let modifyLetterLower = String.fromCharCode(calculationLowerCase);
 			decodeWord.push(modifyLetterLower);
 	
