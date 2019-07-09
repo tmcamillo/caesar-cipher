@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Caesar Cipher</title>
-	<link rel="stylesheet" href="style.css" />
-	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
-	</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Caesar Cipher</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=VT323"
+      rel="stylesheet"
+    />
+  </head>
 
-  	<body>
-		<script src="cipher.js"></script>
-		<script src="tests.js"></script>
+  <body>
+    <script src="cipher.js"></script>
+    <script src="tests.js"></script>
 
-		<div id="main-box"> 
-		<header>
-			<h1>CIPHER</h1>
-			<!--Está curioso com o subtítulo? *.* Tente este deslocamento: Soneca, Dengoso, Feliz, Atchim, Mestre, Zangado e Dunga :P -->
-			<p class='subheading'>Jlzãv whyh vz íuaptvz</p>
-		</header>
-		
-		<main>
-			<p>Insira abaixo a mensagem que deseja codificar ou revelar. Não se esqueça de sempre incluir o deslocamento :)</p>
-			<br>
-			<div id="text-box">
-				<textarea class="text-area-style" type="text" placeholder="Insira aqui o seu texto" id="word"></textarea>
-				<textarea class="text-area-style" type="number" placeholder="E aqui o deslocamento que deseja" id="offset"></textarea>
-			</div>
+    <div id="main-box" class="box-style">
+      <header class="header-style">
+        <h1 class="title-style">CIPHER</h1>
+        <!--Está curioso com o subtítulo? *.* Tente este deslocamento: Soneca, Dengoso, Feliz, Atchim, Mestre, Zangado e Dunga :P -->
+        <p class="subheading">Jlzãv whyh vz íuaptvz</p>
+      </header>
 
-			<div id="btn">
-				<button class="button" onclick="inputWord('encode')">CIFRAR</button>
-				<button class="button" onclick="inputWord('decode')">DECIFRAR</button>
-			</div>
-			
-			<p id="resultEncode" class="hidden"></p>
-			<p id="resultDecode" class="hidden"></p>
-		</main>
-		</div>
-	</body>
+      <main>
+        <p>
+          Insira abaixo a mensagem que deseja codificar ou revelar. Não se
+          esqueça de sempre incluir o deslocamento :)
+        </p>
+        <br />
+        <div id="text-box">
+          <textarea
+            class="text-area-style"
+            type="text"
+            placeholder="Insira aqui o seu texto"
+            id="word"
+          ></textarea>
+          <textarea
+            class="text-area-style"
+            type="number"
+            placeholder="E aqui o deslocamento que deseja"
+            id="offset"
+          ></textarea>
+        </div>
+
+        <div id="btn">
+          <button class="button" onclick="inputWord('encode')">CIFRAR</button>
+          <button class="button" onclick="inputWord('decode')">DECIFRAR</button>
+        </div>
+
+        <p id="resultEncode" class="hidden result-encode"></p>
+        <p id="resultDecode" class="hidden result-decode"></p>
+      </main>
+    </div>
+  </body>
 </html>
