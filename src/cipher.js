@@ -38,6 +38,7 @@ let displayResult = (result, type_button) => {
   document.getElementById(id_show).style.display = "block";
   document.getElementById(id_hide).style.display = "none";
   document.getElementById("clearBtn").style.display = "block";
+  colorBtn(type_button);
 };
 
 let encode = (originalWord, offsetInput, type_button) => {
@@ -94,4 +95,13 @@ let clearForm = () => {
   document.getElementById("resultEncode").style.display = "none";
   document.getElementById("resultDecode").style.display = "none";
   document.getElementById("clearBtn").style.display = "none";
+};
+
+let colorBtn = type_button => {
+  let elem = document.getElementById("clearBtn");
+  if (type_button === "encode") {
+    elem.className += " clear-btn-pink";
+  } else if (type_button === "decode") {
+    elem.className += " clear-btn-orange";
+  }
 };

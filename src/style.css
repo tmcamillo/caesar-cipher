@@ -73,8 +73,19 @@ body {
   text-align: -webkit-center;
 }
 
-.clear-button {
-  background-color: #24e2d9;
+.clear-btn-pink {
+  background-color: rgb(245, 0, 163);
+  color: white;
+  font-family: "VT323", monospace;
+  font-size: 1.1rem;
+  width: 80%;
+  height: 40px;
+  border-radius: 3px;
+  border: 0;
+  cursor: pointer;
+}
+.clear-btn-orange {
+  background-color: rgb(255, 76, 6);
   color: white;
   font-family: "VT323", monospace;
   font-size: 1.1rem;
