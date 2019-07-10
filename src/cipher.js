@@ -1,37 +1,52 @@
-function inputWord(type_button) {
-  let originalWord = document.getElementById("word").value;
-
-  let offsetInput = document.getElementById("offset").value;
-  offsetInput = parseInt(offsetInput);
-
+let validateInput = (originalWord, offsetInput) => {
   if (!originalWord || !offsetInput) {
     alert("OPS! Preencha todos os campo para continuar");
-    return;
+    return false;
   }
+  return true;
+};
+
+let callFunction = type_button => {
+  let originalWord = document.getElementById("word").value;
+  let offsetInput = parseInt(document.getElementById("offset").value);
+
+  if (validateInput(originalWord, offsetInput)) {
+    if (type_button === "encode") {
+      encode(originalWord, offsetInput, type_button);
+    } else if (type_button === "decode") {
+      decode(originalWord, offsetInput, type_button);
+    }
+  }
+};
+
+let displayResult = (result, type_button) => {
+  let id_show = "";
+  let id_hide = "";
+  let message = "";
 
   if (type_button === "encode") {
-    document.getElementById("resultEncode").innerHTML =
-      "Mensagem Cifrada: <br>" + encode(originalWord, offsetInput);
-    document.getElementById("resultEncode").style.display = "block";
-    document.getElementById("resultDecode").style.display = "none";
+    id_show = "resultEncode";
+    id_hide = "resultDecode";
+    message = "Mensagem Cifrada: <br>";
   } else if (type_button === "decode") {
-    document.getElementById("resultDecode").innerHTML =
-      "Mensagem Decifrada: <br>" + decode(originalWord, offsetInput);
-    document.getElementById("resultDecode").style.display = "block";
-    document.getElementById("resultEncode").style.display = "none";
+    id_show = "resultDecode";
+    id_hide = "resultEncode";
+    message = "Mensagem Decifrada: <br>";
   }
-}
 
-function encode(originalWord, offsetInput) {
+  document.getElementById(id_show).innerHTML = message + result;
+  document.getElementById(id_show).style.display = "block";
+  document.getElementById(id_hide).style.display = "none";
+  document.getElementById("clearBtn").style.display = "block";
+};
+
+let encode = (originalWord, offsetInput, type_button) => {
   let encodeWord = [];
-
   for (let i in originalWord) {
     let ascCode = originalWord.charCodeAt(i);
-
     while (offsetInput < 0) {
       offsetInput += 26;
     }
-
     if (ascCode >= 65 && ascCode <= 90) {
       let calculationUpperCase = ((ascCode - 65 + offsetInput) % 26) + 65;
       let modifyLetterUpper = String.fromCharCode(calculationUpperCase);
@@ -45,19 +60,17 @@ function encode(originalWord, offsetInput) {
       encodeWord.push(allOthers);
     }
   }
+  displayResult(encodeWord.join(""), type_button);
   return encodeWord.join("");
-}
+};
 
-function decode(originalWord, offsetInput) {
+let decode = (originalWord, offsetInput, type_button) => {
   let decodeWord = [];
-
   for (let i in originalWord) {
     let ascCode = originalWord.charCodeAt(i);
-
     while (offsetInput < 0) {
       offsetInput += 26;
     }
-
     if (ascCode >= 65 && ascCode <= 90) {
       let calculationUpperCase = ((ascCode - 90 - offsetInput) % 26) + 90;
       let modifyLetterUpper = String.fromCharCode(calculationUpperCase);
@@ -71,5 +84,14 @@ function decode(originalWord, offsetInput) {
       decodeWord.push(allOthers);
     }
   }
+  displayResult(decodeWord.join(""), type_button);
   return decodeWord.join("");
-}
+};
+
+let clearForm = () => {
+  document.getElementById("word").value = "";
+  document.getElementById("offset").value = "";
+  document.getElementById("resultEncode").style.display = "none";
+  document.getElementById("resultDecode").style.display = "none";
+  document.getElementById("clearBtn").style.display = "none";
+};

@@ -69,6 +69,22 @@ body {
   box-shadow: 3px 4px #24e2d9;
 }
 
+.button-div {
+  text-align: -webkit-center;
+}
+
+.clear-button {
+  background-color: #24e2d9;
+  color: white;
+  font-family: "VT323", monospace;
+  font-size: 1.1rem;
+  width: 80%;
+  height: 40px;
+  border-radius: 3px;
+  border: 0;
+  cursor: pointer;
+}
+
 .button:hover {
   background-color: #24e2d9;
   color: white;
