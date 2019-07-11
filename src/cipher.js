@@ -100,8 +100,10 @@ let clearForm = () => {
 let colorBtn = type_button => {
   let elem = document.getElementById("clearBtn");
   if (type_button === "encode") {
+    elem.className -= " clear-btn-orange";
     elem.className += " clear-btn-pink";
   } else if (type_button === "decode") {
+    elem.className -= " clear-btn-pink";
     elem.className += " clear-btn-orange";
   }
 };

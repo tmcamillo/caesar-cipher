@@ -1,104 +1,38 @@
-if (encode("ZatC", 1, "encode") === "AbuD") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "AbuD");
-}
+const testFirst = (encode, provideTest) => {
+  if (provideTest === encode) {
+    console.log("Tudo Ok!");
+  } else {
+    console.log("Atenção! Deu erro!");
+  }
+};
 
-if (encode("Cesão", 1, "encode") === "Dftãp") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "Dftãp");
-}
+testFirst(encode("ZatC", 1, "encode"), "AbuD");
+testFirst(encode("Cesão", 1, "encode"), "Dftãp");
+testFirst(encode("A R S W xyz", 1, "encode"), "B S T X yza");
+testFirst(encode("AbuD", -54, "encode"), "YzsB");
+testFirst(encode("Cesão", -92, "encode"), "Oqeãa");
+testFirst(encode("A R S W xyz", -133, "encode"), "X O P T uvw");
+testFirst(encode("AbuD", -1, "encode"), "ZatC");
+testFirst(encode("Cesão", -1, "encode"), "Bdrãn");
+testFirst(encode("A R S W xyz", -1, "encode"), "Z Q R V wxy");
 
-if (encode("A R S W xyz", 1, "encode") === "B S T X yza") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "B S T X yza");
-}
+const testSec = (decode, provideTest) => {
+  if (provideTest === decode) {
+    console.log("Tudo Ok!");
+  } else {
+    console.log("Atenção! Deu erro!");
+  }
+};
 
-if (decode("AbuD", 1, "decode") === "ZatC") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "ZatC");
-}
-
-if (decode("Dftãp", 1, "decode") === "Cesão") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "Cesão");
-}
-
-if (decode("B S T X yza", 1, "decode") === "A R S W xyz") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "A R S W xyz");
-}
-
-if (encode("AbuD", -1, "encode") === "ZatC") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "ZatC");
-}
-
-if (encode("Cesão", -1, "encode") === "Bdrãn") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "Bdrãn");
-}
-
-if (encode("A R S W xyz", -1, "encode") === "Z Q R V wxy") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "Z Q R V wxy");
-}
-
-if (decode("ZatC", -1, "decode") === "AbuD") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "AbuD");
-}
-if (decode("Bdrãn", -1, "decode") === "Cesão") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "Cesão");
-}
-if (decode("Z Q R V wxy", -1, "decode") === "A R S W xyz") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "A R S W xyz");
-}
-
-if (encode("AbuD", -54, "encode") === "YzsB") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "YzsB");
-}
-if (encode("Cesão", -92, "encode") === "Oqeãa") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "Oqeãa");
-}
-if (encode("A R S W xyz", -133, "encode") === "X O P T uvw") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "X O P T uvw");
-}
-
-if (decode("YzsB", -54, "decode") === "AbuD") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "YzsB");
-}
-if (decode("Oqeãa", -92, "decode") === "Cesão") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "Oqeãa");
-}
-if (decode("X O P T uvw", -133, "decode") === "A R S W xyz") {
-  console.log("Tudo Ok!");
-} else {
-  console.log("deu erro" + "X O P T uvw");
-}
+testSec(decode("B S T X yza", 1, "decode"), "A R S W xyz");
+testSec(decode("AbuD", 1, "decode"), "ZatC");
+testSec(decode("Dftãp", 1, "decode"), "Cesão");
+testSec(decode("ZatC", -1, "decode"), "AbuD");
+testSec(decode("Bdrãn", -1, "decode"), "Cesão");
+testSec(decode("Z Q R V wxy", -1, "decode"), "A R S W xyz");
+testSec(decode("YzsB", -54, "decode"), "AbuD");
+testSec(decode("X O P T uvw", -133, "decode"), "A R S W xyz");
 
 document.getElementById("resultEncode").style.display = "none";
 document.getElementById("resultDecode").style.display = "none";
+document.getElementById("clearBtn").style.display = "none";
